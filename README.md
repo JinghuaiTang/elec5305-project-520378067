@@ -1,10 +1,10 @@
-# 🎵 Recognize and Extract Special Sound Signals using Neural Networks
+# Recognize and Extract Special Sound Signals using Neural Networks
 
 The goal of this project is to use neural networks to recognize and extract special sound signals. In complex acoustic environments, target sounds are often masked by background noise, making it difficult for traditional signal processing techniques to achieve satisfactory performance. By introducing deep learning methods, we aim to automatically learn time-frequency features of sound signals, thereby achieving higher accuracy and robustness.
 
 ---
 
-## ⚙️ Methodology
+## Methodology
 
 The methodology of this project is divided into four stages:
 
@@ -18,7 +18,7 @@ The methodology of this project is divided into four stages:
 
 ---
 
-## 🎯 Expected Outcomes
+## Expected Outcomes
 
 The expected outcomes include:
 
