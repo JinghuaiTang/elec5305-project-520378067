@@ -1,32 +1,90 @@
-# Recognize and Extract Special Sound Signals using Neural Networks
+# Urban Sound Classification using Convolutional Neural Networks
 
-The goal of this project is to use neural networks to recognize and extract special sound signals. In complex acoustic environments, target sounds are often masked by background noise, making it difficult for traditional signal processing techniques to achieve satisfactory performance. By introducing deep learning methods, we aim to automatically learn time-frequency features of sound signals, thereby achieving higher accuracy and robustness.
+This project aims to classify environmental sounds (such as sirens, car horns, dog barks, and drilling) using a Convolutional Neural Network (CNN). The main objective is to develop a model that can automatically recognize different types of urban sounds from the **UrbanSound8K** dataset and evaluate its accuracy and robustness under various noise conditions.  
+This project also serves as a practical exercise in combining signal processing and deep learning methods, focusing on applying neural networks to real-world acoustic scenarios.
+
+---
+
+## Project Objectives
+
+- Build a CNN-based model to classify urban environmental sounds.  
+- Utilize publicly available datasets to ensure reproducibility.  
+- Explore preprocessing techniques and data augmentation for audio signals.  
+- Evaluate the model’s performance using established machine learning metrics.  
+- Gain hands-on experience with Python, PyTorch, and audio feature extraction tools.
 
 ---
 
 ## Methodology
 
-The methodology of this project is divided into four stages:
+The workflow of this project consists of four major stages:
 
-1. **Data Preparation**: Collect and organize datasets containing target sounds and background noise, and expand them if necessary through recording; apply preprocessing techniques such as noise reduction, normalization, and framing; apply data augmentation (e.g., adding noise, time stretching) to improve model generalization.  
+### 1. Data Preparation
+- Use the **UrbanSound8K** dataset as the main data source, which includes 8,732 labeled sound clips across 10 urban sound categories.  
+- Perform data preprocessing:  
+  - Convert raw audio into **spectrograms** or **Mel-Frequency Cepstral Coefficients (MFCCs)**.  
+  - Apply normalization and noise reduction to enhance feature quality.  
+  - Use data augmentation techniques (e.g., adding random background noise, pitch shifting, or time stretching) to improve model generalization.
 
-2. **Model Design**: Employ Convolutional Neural Networks (CNNs) as the core architecture, converting sound signals into spectrograms or Mel-Frequency Cepstral Coefficients (MFCCs) as inputs; in addition, incorporate traditional signal processing techniques (e.g., filtering, spectral subtraction) as baselines for comparison.  
+### 2. Model Design
+- Implement a **Convolutional Neural Network (CNN)** for feature extraction and classification.  
+- Experiment with different architectures to balance accuracy and computational cost.  
+- Integrate traditional signal processing methods (such as filtering or spectral subtraction) as baseline comparisons.  
+- Develop and test the model using **Python**, **PyTorch**, and **Librosa** for feature processing and visualization.
 
-3. **Training Process**: Train the model with cross-entropy loss and optimizers such as Adam or SGD; adopt mini-batch training and monitor validation performance, adjusting hyperparameters as necessary.  
+### 3. Training Process
+- Train the CNN model using the **cross-entropy loss** function.  
+- Apply optimizers such as **Adam** or **SGD** for parameter updates.  
+- Use **mini-batch training** and monitor validation accuracy to prevent overfitting.  
+- Tune hyperparameters (learning rate, batch size, number of epochs) for optimal convergence.
 
-4. **Performance Evaluation**: Evaluate the model on an independent test set using accuracy, precision, recall, and F1-score as evaluation metrics, while also testing robustness under different noise conditions.  
+### 4. Performance Evaluation
+- Evaluate model performance using:  
+  - **Accuracy**, **Precision**, **Recall**, and **F1-score**.  
+  - **Confusion Matrix** to visualize class-wise prediction results.  
+- Test robustness under different noise levels to assess real-world applicability.
+
+---
+
+## Current Progress
+
+- UrbanSound8K dataset has been downloaded and organized.  
+- Preliminary preprocessing scripts (e.g., loading, feature extraction) have been tested.  
+- Baseline CNN model implemented and initialized in PyTorch.  
+- Initial runs on sample subsets show promising classification results (~60% accuracy after first epoch).  
+- Ongoing work includes full dataset training and optimization.
 
 ---
 
 ## Expected Outcomes
 
-The expected outcomes include:
-
-- A neural network model capable of effectively recognizing and extracting special sound signals.  
-- A complete experimental workflow covering data preparation, model training, and performance evaluation.  
-- Hands-on experience with Python, PyTorch, and signal processing libraries such as Librosa.  
-- A demonstration of the potential of artificial intelligence in sound signal processing.  
+- A functional CNN model capable of classifying common urban sounds with good accuracy.  
+- A complete, reproducible pipeline from data preparation to evaluation.  
+- Improved understanding of spectrogram-based feature extraction and CNN audio classification.  
+- A reference project for applying AI in environmental sound recognition tasks.
 
 ---
 
-This project not only helps us achieve the research objectives but also serves as a useful reference for similar student projects and future research in this field.
+## Repository Structure
+
+- project_root/  
+  - data/ — Dataset and preprocessing scripts  
+  - model/ — CNN model architecture and training scripts  
+  - results/ — Evaluation metrics and plots  
+  - utils/ — Helper functions for data handling  
+  - README.md — Project documentation
+
+## Next Steps
+
+- Complete training on the full UrbanSound8K dataset.  
+- Visualize classification metrics and generate confusion matrices.  
+- Compare CNN performance with traditional MFCC + SVM baseline.  
+- Document experimental results and prepare final report.
+
+---
+
+## References
+
+- UrbanSound8K Dataset: https://urbansounddataset.weebly.com/urbansound8k.html  
+- PyTorch Documentation: https://pytorch.org/docs/  
+- Librosa Audio Analysis Library: https://librosa.org/
